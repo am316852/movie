@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Movies</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <script type="text/javascript" language="javascript" src="jquery-2.2.4.js"></script> -->
+    <script type="text/javascript" language="javascript" src="js/jquery-2.2.4.js"></script>
+
+  </head>
+
+
+  <script>
+
+  $(function () {
+     $('#modal-container-75492').modal('hide');
+  });
+
+  </script>
+  <body>
+<div class="jumbotron well">
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3">
+          <!-- image -->
+          <img id="myImg" alt="No Image Found" src=""/>
+				</div>
+				<div class="col-md-9">
+					<div>
+            <h2 id="Title">
+
+            </h2>
+            <hr />
+            <h5 id="Year">
+
+            </h5>
+            <h5 id="Actors">
+
+            </h5>
+            <h5 id="Director"></h5>
+						<h5 id="Plot">
+
+						</h5>
+              <p>
+                  <small><h3>
+                      <span class="glyphicon glyphicon-calendar"></span>
+                      <span id="Released"></span>
+                       &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>Ratings : <span id="imdbRating"></span></b>
+                        &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b>Awards : </b><span id="Awards"></span></h3></small></p>
+
+                        <ul class="pagination" >
+                          <li>
+                            <button id="prev" type="button" class="btn btn-primary">Prev</button>
+                          </li>
+                        				<li>
+                        					<button id="next" type="button" class="btn btn-primary">Next</button>
+                        				</li>
+                        			</ul>
+            <p>
+							<!-- <a class="btn btn-primary btn-large" href="#">Add</a> -->
+         <span>
+            <a id="modal-75492" href="#modal-container-75492" role="button" class="btn btn-primary btn-large" data-toggle="modal">ADD Movie Details</a>
+            <a id="frmCadastre" class="btn btn-primary btn-large" href="#modal-container-754922" role="button" data-toggle="modal">Update Movie Details</a>
+            <a id="modal-754921" class="btn btn-primary btn-large" href="#modal-container-754921" role="button" data-toggle="modal">Delete Movie</a>
+
+        </span>
+
+
+        <div class="modal fade" id="modal-container-75492" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  Add Movie details
+                </h4>
+              </div>
+                <div class="modal-body">
+                  <!-- action="add" method="post" -->
+                <form class="form-horizontal" id="frmCadastre" action="/add" method="post">
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputName">Movie Name</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="Title" placeholder="Movie Name" type="text">
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputName">Image</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="Poster" placeholder="ImagURL" type="text">
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputName">Year</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="Year" placeholder="Release Year" type="text">
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputName">Actors</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="Actors" placeholder="Actors" type="text">
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputName">Director</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="Director" placeholder="Directors" type="text">
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputName">Description</label>
+                     <div class="col-lg-10">
+                       <textarea class="form-control" name="Plot" placeholder="Movie Description" rows="3"></textarea>
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputEmail">Released Date</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="Released" placeholder="Release Date" >
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputMessage">Ratings</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="imdbRating" placeholder="Ratings" >
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label class="col-lg-2 control-label" for="inputEmail">Awards</label>
+                     <div class="col-lg-10">
+                       <input class="form-control" name="Awards" placeholder="Awards" >
+                     </div>
+                   </div>
+
+              </div>
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  Close
+                </button>
+                <input type="submit" value="Save" name="btnSave" class="btn btn-primary">
+                <!-- <button type="submit" class="btn btn-primary" > -->
+
+                </button>
+              </div>
+            </form>
+
+            </div>
+
+          </div>
+
+        </div>
+      <!-- ////////////////////////////////////////////////////////////////////////////////// -->
+        <div class="modal fade" id="modal-container-754921" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  Delete Movie
+                </h4>
+              </div>
+                <div class="modal-body">
+                  <!-- action="add" method="post" -->
+                <form class="form-horizontal" action="/delete" method="post">
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label" for="inputEmail">Title</label>
+                    <div class="col-lg-10">
+                      <input  id="deleteTitle"  class="form-control" name="Title" type="text">
+                    </div>
+                  </div>
+                  Are you sure you want to Delete Movie Records from list?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  Close
+                </button>
+                <input type="submit" value="Delete" name="btnSave" class="btn btn-primary">
+                <!-- <button type="submit" class="btn btn-primary" > -->
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <div class="modal fade" id="modal-container-754922" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                      ×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                     Update movie details
+                    </h4>
+                  </div>
+                    <div class="modal-body">
+                      <!-- action="add" method="post" -->
+                    <form class="form-horizontal" id="frmCadastre" action="/update" method="post">
+
+                       <div class="form-group">
+                         <label  class="col-lg-2 control-label" for="inputName" >Movie Name</label>
+                         <div class="col-lg-10">
+
+                           <input readonly="readonly" id="Title1" class="form-control" name="Title" placeholder="Movie Name" type="text"  />
+
+                         </div>
+                       </div>
+
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputName">Image</label>
+                         <div class="col-lg-10">
+                           <input id="myImg1" class="form-control" name="Poster" placeholder="ImagURL" type="text">
+                         </div>
+                       </div>
+
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputName">Year</label>
+                         <div class="col-lg-10">
+                           <input  id="Year1" class="form-control" name="Year" placeholder="Release Year" type="text">
+                         </div>
+                       </div>
+
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputName">Actors</label>
+                         <div class="col-lg-10">
+                           <input id="Actors1" class="form-control" name="Actors" placeholder="Actors" type="text">
+                         </div>
+                       </div>
+
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputName">Director</label>
+                         <div class="col-lg-10">
+                           <input id="Director1" class="form-control" name="Director" placeholder="Directors" type="text">
+                         </div>
+                       </div>
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputName">Description</label>
+                         <div class="col-lg-10">
+                           <textarea  id="Plot1" class="form-control" name="Plot" placeholder="Movie Description" rows="3"></textarea>
+                         </div>
+                       </div>
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputEmail">Released Date</label>
+                         <div class="col-lg-10">
+                           <input id="Released1" class="form-control" name="Released" placeholder="Release Date" >
+                         </div>
+                       </div>
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputMessage">Ratings</label>
+                         <div class="col-lg-10">
+                           <input id="imdbRating1" class="form-control" name="imdbRating" placeholder="Ratings" >
+                         </div>
+                       </div>
+                       <div class="form-group">
+                         <label class="col-lg-2 control-label" for="inputEmail">Awards</label>
+                         <div class="col-lg-10">
+                           <input id="Awards1" class="form-control" name="Awards" placeholder="Awards" >
+                         </div>
+                       </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                      Close
+                    </button>
+                    <input type="submit" value="Save" name="btnSave" class="btn btn-primary"/>
+                   </button>
+                  </div>
+                </form>
+                 </div>
+                </div>
+              </div>
+        	</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+$.ajax({
+url:'page.json',
+datatype:'json',
+type:'get',
+cache:false,
+success:function(data){
+ $.getJSON( "page.json", function( data ) {
+    });
+  var count = 0;
+$("#next").click(function() {
+  if(count< data.length){
+    count++;
+      nextImg();
+    }
+});
+$("#prev").click(function() {
+  if(count>0){
+    count--;
+      nextImg();
+    }
+});
+var nextImg = function()
+{
+     $("#Title").text(data[count].Title);
+    //  $('.col-md-3').prepend('<img alt="No Image Found" src="' + data[count].Poster +'" />');
+    $('#myImg').attr("src", data[count].Poster);
+     $('#Year').text("Year : " + data[count].Year);
+     $('#Actors').text("Actors : " + data[count].Actors);
+     $('#Director').text("Director : "+ data[count].Director);
+     $('#Plot').text(data[count].Plot);
+     $('#Released').text(data[count].Released);
+     $('#imdbRating').text("       " + data[count].imdbRating);
+     $('#Awards').text(data[count].Awards);
+
+     $('#deleteTitle').val(data[count].Title);
+
+     $("#frmCadastre").click(function(){
+      $("#Title1").val(data[count].Title);
+      $('#myImg1').val(data[count].Poster);
+      $('#Year1').val(data[count].Year);
+      $('#Actors1').val(data[count].Actors);
+      $('#Director1').val(data[count].Director);
+      $('#Plot1').val(data[count].Plot);
+      $('#Released1').val(data[count].Released);
+      $('#imdbRating1').val(data[count].imdbRating);
+      $('#Awards1').val(data[count].Awards);
+    });
+}
+if(count==0)
+{
+  nextImg();
+}
+}
+});
+</script>
+<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- <script src="js/paginate.js"></script>
+    <script src="js/custom.js"></script> -->
+  </body>
+</html>
